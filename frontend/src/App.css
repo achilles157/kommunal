@@ -1,0 +1,238 @@
+/* Global styles */
+:root {
+  --primary-color: #4a90e2; /* Updated primary color */
+  --secondary-color: #50e3c2; /* New secondary color */
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --background-color: #f5f6f7;
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Updated font */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Auth Forms */
+.auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 20px;
+}
+
+.auth-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s; /* Added transition */
+}
+
+.auth-form:hover {
+  transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+.auth-form h2 {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  color: var(--primary-color); /* Updated heading color */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* More rounded corners */
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s; /* Added box-shadow transition */
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Added focus shadow */
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s; /* Added transform transition */
+}
+
+.auth-form button:hover:not(:disabled) {
+  background-color: #3a7bd5; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.auth-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--error-color);
+  background-color: #fff;
+  border: 1px solid var(--error-color);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Navigation */
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.signout-btn {
+  background: none;
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.signout-btn:hover {
+  background-color: var(--error-color);
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Create Post */
+.create-post {
+  max-width: 800px; /* Centered and larger */
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-post textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* More rounded corners */
+  resize: vertical;
+}
+
+.create-post button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-post button:hover:not(:disabled) {
+  background-color: #3a7bd5; /* Darker shade on hover */
+}
+
+.create-post button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Posts */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px; /* More rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post-content {
+  line-height: 1.5;
+}
+
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.error {
+  color: var(--error-color);
+  text-align: center;
+  padding: 2rem;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
